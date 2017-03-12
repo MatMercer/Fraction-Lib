@@ -19,7 +19,13 @@ public:
 
     Fraction operator/(Fraction);
 
+    Fraction operator/(long);
+
     Fraction operator+(Fraction);
+
+    Fraction operator+(long);
+
+    static long lcm(long x, long y);
 
     friend ostream &operator<<(ostream &, Fraction);
 };
