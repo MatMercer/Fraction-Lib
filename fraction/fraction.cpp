@@ -37,17 +37,15 @@ Fraction Fraction::operator/(long div) {
 }
 
 Fraction Fraction::operator+(Fraction sumFrac) {
-    //TODO: Implement this
     long newNum = 0;
     long newDen = 0;
 
     if (sumFrac.den != this->den) {
         long m = this->lcm(sumFrac.den, this->den);
-        newNum += sumFrac.num * (m/sumFrac.den);
-        newNum += this->num * (m/this->den);
+        newNum += sumFrac.num * (m / sumFrac.den);
+        newNum += this->num * (m / this->den);
         newDen = m;
-    }
-    else {
+    } else {
         newNum = sumFrac.num + this->num;
         newDen = sumFrac.den;
     }
@@ -61,11 +59,11 @@ Fraction Fraction::operator+(long sumNum) {
 
 long Fraction::lcm(long x, long y) {
     // Finds the lowest and highest number
-    long higher = x > y ? x:y;
-    long lower = higher == x ? y:x;
+    long higher = x > y ? x : y;
+    long lower = higher == x ? y : x;
 
     int i = 1;
-    while(higher * i % lower != 0)
+    while (higher * i % lower != 0)
         i += 1;
 
     return higher * i;
