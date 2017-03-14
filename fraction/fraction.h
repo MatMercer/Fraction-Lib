@@ -25,6 +25,8 @@ public:
 
     Fraction operator+(long);
 
+    Fraction simplify();
+
     static long lcm(long x, long y);
 
     friend ostream &operator<<(ostream &, Fraction);

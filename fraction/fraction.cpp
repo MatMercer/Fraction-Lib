@@ -74,4 +74,21 @@ ostream &operator<<(ostream &output, Fraction frac) {
     return output;
 }
 
+Fraction Fraction::simplify() {
+    long higher = this->den > this->num ? this->den:this->num;
+    higher -= 1;
+    long newNum = this->num;
+    long newDen = this->den;
+
+    while(higher > 1) {
+        if (newNum % higher == 0 && newDen % higher == 0) {
+            newDen /= higher;
+            newNum /= higher;
+        }
+        higher -= 1;
+    }
+
+    return Fraction(newNum, newDen);
+}
+
 

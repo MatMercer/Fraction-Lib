@@ -12,6 +12,7 @@ int main() {
     cout << endl << "f^2: " << f * f << endl;
     cout << "(f*f)/f2: " << (f * f) / f2 << endl;
     cout << "f*2: " << f * 2 << endl;
+    cout << "simplify(f*2): " << (f * 2).simplify() << endl;
     cout << "f+f2: " << f + f2 << endl;
     cout << "f+5: " << f + 5 << endl;
     cout << "f2/3: " << f2 / 3 << endl;
